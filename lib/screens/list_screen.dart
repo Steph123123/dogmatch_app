@@ -8,7 +8,7 @@ class ListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Elige tu personalidad')),
+      appBar: AppBar(title: const Text('Choose your personality')),
       body: ListView.builder(
         itemCount: personalities.length,
         itemBuilder: (context, index) {
@@ -19,5 +19,3 @@ class ListScreen extends StatelessWidget {
   }
 }
 
-// En vez de ver las personalidades sin mas, esta pantalla será responsable de cargar las personalidades 
-// y mostrarlas, personality tile sigue igual
