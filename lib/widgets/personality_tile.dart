@@ -15,7 +15,7 @@ class PersonalityTile extends StatelessWidget {
         radius: 25,
       ),
       title: Text(personality.name),
-      subtitle: Text(personality.description),
+      //subtitle: Text(personality.description),
       trailing: const Icon(Icons.arrow_forward_ios),
       onTap: () {
         Navigator.push(

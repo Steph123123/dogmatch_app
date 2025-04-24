@@ -11,7 +11,7 @@ class DogMatchApp extends StatelessWidget {
     return MaterialApp(
       title: 'DogMatch',
       theme: ThemeData(primarySwatch: Colors.teal),
-      home: const ListScreen(), // No necesitamos pasar la lista aquí directamente
+      home: const ListScreen(),
     );
   }
 }

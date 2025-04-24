@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../models/personality.dart';
 import '../widgets/personality_tile.dart';
 
-
 class ListScreen extends StatelessWidget {
   const ListScreen({super.key});
 

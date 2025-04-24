@@ -1,9 +1,11 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:logger/logger.dart';
 
-class DogApi { //Creamos una clase DogApi que contenga la parte lógica
+class DogApi {
   final String apiKey = 'live_m0YgjyLOeztVhXWdXoRwOpGVd925VwaXJVk0EopVIdqDbbEi4ggOxldOYRWRHsF0';
   final String baseUrl = 'https://api.thedogapi.com/v1';
+  final _logger = Logger();
 
   Future<List<dynamic>> searchBreeds(String query) async {
     final url = Uri.parse('$baseUrl/breeds/search?q=$query');
@@ -15,11 +17,11 @@ class DogApi { //Creamos una clase DogApi que contenga la parte lógica
       if (response.statusCode == 200) {
         return json.decode(response.body);
       } else {
-        print('Error searching breeds: ${response.statusCode}');
+        _logger.e('Error searching breeds: ${response.statusCode}');
         return [];
       }
     } catch (e) {
-      print('Error searching breeds: $e');
+      _logger.e('Error searching breeds: $e');
       return [];
     }
   }
@@ -37,10 +39,10 @@ class DogApi { //Creamos una clase DogApi que contenga la parte lógica
           return data.first;
         }
       } else {
-        print('Error getting breed image: ${response.statusCode}');
+        _logger.e('Error getting breed image: ${response.statusCode}');
       }
     } catch (e) {
-      print('Error getting breed image: $e');
+      _logger.e('Error getting breed image: $e');
     }
     return null;
   }
